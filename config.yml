@@ -25,8 +25,10 @@ steps:
   description: The key to becoming a new person is to undertand yourself.
   event: pull_request
   actions: # a list of the actions that will occur when the step is triggered by an event
-  before:
-  type: respond
+  else:
+    - type: respond
+      with: 01_try-again.md
+- type: respond
   with: 01_nice-work.md
 
 - title: Assign yourself
@@ -34,7 +36,10 @@ steps:
   event: issues.assigned
   link: 'https://github.com/amrbakouban/lab-starter/issues/1'
   actions:
-  type: respond
+  else:
+    - type: respond
+      with: 01_try-again.md
+- type: respond
   with: 01_nice-work.md
     
 - title: Make goals for improvement
@@ -48,17 +53,22 @@ steps:
   description: Work towards achieving your goals and remember that failure is a step towards success.
   event: pull_request
   actions:
-  type: respond
+ else:
+    - type: respond
+      with: 01_try-again.md
+- type: respond
   with: 01_nice-work.md
-    
 
 # Step 4: 
  - title: Work hard everyday
    description: Make sure you're working hard everyday and be committed to yourself.
    event: issue_commented.created
    actions:
-   type: respond
-   with: 01_nice-work.md
+   else:
+    - type: respond
+      with: 01_try-again.md
+- type: respond
+  with: 01_nice-work.md
     
 
 # Step 5: EDIT HERE - INTERNAL COMMENT FOR STEP 5
@@ -66,6 +76,9 @@ steps:
   description: Surrounding yourself with people you idolize to be can be the cherry on top.
   event: status
   actions:
-  type: respond
+  else:
+    - type: respond
+      with: 01_try-again.md
+- type: respond
   with: 01_nice-work.md
     
