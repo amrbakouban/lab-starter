@@ -25,6 +25,7 @@ steps:
   description: The key to becoming a new person is to undertand yourself.
   event: pull_request
   actions: # a list of the actions that will occur when the step is triggered by an event
+  before:
   type: respond
   with: 01_nice-work.md
 
