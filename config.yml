@@ -29,7 +29,6 @@ steps:
   actions: # a list of the actions that will occur when the step is triggered by an event
   - type: # the type of action, full list at https://lab.github.com/docs/actions
 
-# Step 2: 
 type: gate
 left:
 operator:
