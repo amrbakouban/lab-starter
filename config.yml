@@ -29,12 +29,12 @@ steps:
   actions: # a list of the actions that will occur when the step is triggered by an event
   - type: # the type of action, full list at https://lab.github.com/docs/actions
 
-type: gate
-left:
-operator:
-right:
+- type: gate
+  left: '%payload.pull_request.title%'
+  operator: ===
+  right: "Creating the config file"
 
- - title: Make goals for improvement
+- title: Make goals for improvement
   description: Making goals is a a big step for improvment
   event: status
 #  actions: # a list of the actions that will occur when the step is triggered by an event
