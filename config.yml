@@ -24,7 +24,7 @@ steps:
 - title: Know yourself
   description: The key to becoming a new person is to undertand yourself.
   event: pull_request
-  actions: # a list of the actions that will occur when the step is triggered by an event
+ # actions: # a list of the actions that will occur when the step is triggered by an event
   type: respond
   with: 01_nice-work.md
 
@@ -32,14 +32,14 @@ steps:
 - title: Make goals for improvement
   description: Making goals is a a big step for improvment
   event: status
-  actions: # a list of the actions that will occur when the step is triggered by an event
+  #actions: # a list of the actions that will occur when the step is triggered by an event
  type: respond
  with: 01_nice-work.md
 
  - title:  Act upon your goals
    description: Work towards achieving your goals and remember that failure is a step towards success.
    event: pull_request
-   actions: # a list of the actions that will occur when the step is triggered by an event
+   #actions: # a list of the actions that will occur when the step is triggered by an event
   type: respond
   with: 01_nice-work.md
 
@@ -47,13 +47,13 @@ steps:
  - title: Work hard everyday
    description: Make sure you're working hard everyday and be committed to yourself.
    event: issue_commented.created
-   actions: # a list of the actions that will occur when the step is triggered by an event
+   #actions: # a list of the actions that will occur when the step is triggered by an event
    type: respond
    with: 01_nice-work.md
 
  - title:  Communicate with others
   description: Surrounding yourself with people you idolize to be can be the cherry on top.
   event: status
-  actions: # a list of the actions that will occur when the step is triggered by an event
+  #actions: # a list of the actions that will occur when the step is triggered by an event
   type: respond
   with: 01_nice-work.md
