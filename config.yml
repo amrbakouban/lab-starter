@@ -25,13 +25,27 @@ steps:
   description: The key to becoming a new person is to undertand yourself.
   event: pull_request
  actions:
-  - type: respond
+ - type: gate
+    left: '%payload.pull_request.base.ref%'
+    operator: ===
+    right: main
+    else:
+    - type: respond
+      with: 01_try-again.md
+ - type: respond
   with: 01_nice-work.md
 
 - title: Make goals for improvement
   description: Making goals is a a big step for improvment
   event: status
   actions:
+  - type: gate
+    left: '%payload.pull_request.base.ref%'
+    operator: ===
+    right: main
+    else:
+    - type: respond
+      with: 01_try-again.md
   - type: respond
   with: 01_nice-work.md
  
@@ -40,6 +54,13 @@ steps:
    description: Work towards achieving your goals and remember that failure is a step towards success.
    event: pull_request
     actions:
+  - type: gate
+    left: '%payload.pull_request.base.ref%'
+    operator: ===
+    right: main
+    else:
+    - type: respond
+      with: 01_try-again.md
   - type: respond
   with: 01_nice-work.md
 
@@ -47,6 +68,13 @@ steps:
    description: Make sure you're working hard everyday and be committed to yourself.
    event: issue_commented.created
    actions:
+  - type: gate
+    left: '%payload.pull_request.base.ref%'
+    operator: ===
+    right: main
+    else:
+    - type: respond
+      with: 01_try-again.md
   - type: respond
   with: 01_nice-work.md
  
@@ -54,5 +82,12 @@ steps:
   description: Surrounding yourself with people you idolize to be can be the cherry on top.
   event: status
   actions:
+  - type: gate
+    left: '%payload.pull_request.base.ref%'
+    operator: ===
+    right: main
+    else:
+    - type: respond
+      with: 01_try-again.md
   - type: respond
   with: 01_nice-work.md
